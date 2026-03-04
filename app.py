@@ -43,12 +43,10 @@ liga_id = liga_ids[liga_selecionada]
 @st.cache_data(ttl=600)
 def buscar_jogos_footystats(api_key, league_id, season):
    url = f"https://footystats.org/api/team?key={api_key}&team_id={id}&season={season_selected}"
+  def stats_time(id, api_key):
+    url = f"https://footystats.org/api/team?key={api_key}&team_id={id}&season={season_selected}"
     res = requests.get(url)
-    if res.status_code != 200:
-        st.error("Erro ao buscar jogos")
-        return []
-    return res.json().get("fixtures", [])
-
+    return res.json().get("team", {})
 jogos = buscar_jogos_footystats(API_KEY, liga_id, season_selected)
 
 if len(jogos) == 0:
