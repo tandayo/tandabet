@@ -7,7 +7,7 @@ import math
 st.set_page_config(page_title="TandaBet Global API", layout="wide")
 st.title("🌍 Poisson Football Analyzer – Multi‑Ligas")
 
-API_KEY = "SUA_CHAVE_API"  # coloque sua API Key da FootyStats
+API_KEY = "test85g57"  # coloque sua API Key da FootyStats
 
 # IDs das 20 ligas principais
 liga_ids = {
