@@ -54,10 +54,10 @@ jogos = buscar_jogos_footystats(API_KEY, liga_id, season_selected)
 if len(jogos) == 0:
     st.write("Nenhum jogo encontrado para essa liga/temporada")
 else:
+    # Lista de opções para o selectbox
     jogo_choices = [f"{j['home_team']} x {j['away_team']}" for j in jogos]
     escolhido = st.selectbox("Selecione o jogo", jogo_choices)
-   jogo_obj = next(j for j in jogos if f"{j['home_team']} x {j['away_team']}" == escolhido)
-    # ⚽ Buscar estatísticas de cada time
+    jogo_obj = next(j for j in jogos if f"{j['home_team']} x {j['away_team']}" == escolhido)
     def stats_time(id, api_key):
         url = f\"https://footystats.org/api/team?key={api_key}&team_id={id}&season={season_selected}\"
         r = requests.get(url)
