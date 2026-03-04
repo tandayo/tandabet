@@ -42,7 +42,7 @@ liga_id = liga_ids[liga_selecionada]
 # ⚽ Buscar jogos da liga selecionada
 @st.cache_data(ttl=600)
 def buscar_jogos_footystats(api_key, league_id, season):
-    url = f"https://footystats.org/api/fixtures?key={api_key}&league={league_id}&season={season}"
+   url = f"https://footystats.org/api/team?key={api_key}&team_id={id}&season={season_selected}"
     res = requests.get(url)
     if res.status_code != 200:
         st.error("Erro ao buscar jogos")
