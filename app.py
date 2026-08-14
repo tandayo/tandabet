@@ -101,3 +101,19 @@ else:
     df = pd.DataFrame(placares, columns=["Placar", "Probabilidade"]).sort_values(by="Probabilidade", ascending=False)
     st.markdown("## Top 10 Placar Exato")
     st.dataframe(df.head(10))
+    MINUTE_START = 28
+MINUTE_END = 35
+
+MIN_XG = 0.60
+MIN_SHOTS = 7
+MIN_SHOTS_ON_TARGET = 3
+
+MIN_SCORE = 75
+
+MONTE_CARLO_SIMULATIONS = 10000
+
+# Mercados
+MARKET_HT = "Over 0.5 HT"
+MARKET_FT = "Over 1.5 FT"
+MARKET_BTTS = "BTTS"
+MARKET_O25 = "Over 2.5"
